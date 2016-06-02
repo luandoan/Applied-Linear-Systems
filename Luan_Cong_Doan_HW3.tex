@@ -1,0 +1,255 @@
+\documentclass[14pt,a4paper]{article}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\geometry{a4paper, total = {210mm,297mm},left=35mm, right=25mm,top=25mm,bottom=25mm}
+
+
+%Begin document - Applied linear Systems Homework 3
+
+\begin{document}
+\label{cover}
+\begin{center}
+	\vfill
+	\vspace{50cm}
+	\large{\textbf{ME-5554 Applied Linear System \\ Homework 3}}
+	\vfill
+	\textbf{Luan Cong Doan} \\ luandoan@vt.edu
+	%\vfill
+%	Department of Mechanical Engineering \\ Virginia Polytechnic Institute and State University
+	\vfill
+	\today
+\end{center}
+\pagebreak
+	
+\large{Answer Sheet}
+\label{Numerical Exercises}
+\section{NE2.2 - For the following systems described by the given state equations, derive the associated transfer functions:}
+\begin{enumerate}
+	\doublespacing
+	\item 
+	$\begin{bmatrix}\dot{x_1}(t)\\ \dot{x_2}(t) \end{bmatrix} = \begin{bmatrix}-3&0 \\0&-4 \end{bmatrix} \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} + \begin{bmatrix} 1\\1 \end{bmatrix}u(t)$ \\
+	
+	$y(t) = \begin{bmatrix} 1&1 \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix}\ + [0]u(t) $ \\
+	
+	Transfer function H(s) is defined by:\\
+	$H(s) = C.(sI-A)^{-1}.B + D$ \\ 
+	We have: \\
+	$(sI-A) = \begin{bmatrix} s&0 \\ 0&s	\end{bmatrix} - \begin{bmatrix}
+	-3 & 0 \\ 0 & -4 \end{bmatrix} = \begin{bmatrix} s+3 & 0 \\ 0 & s+4	\end{bmatrix}$\\
+	
+	$H(s) = \begin{bmatrix}1&1\end{bmatrix}.\begin{bmatrix} s+3 & 0 \\ 0 & s+4	\end{bmatrix}^{-1}.\begin{bmatrix} 1 \\ 1\end{bmatrix} + [0]$ \\
+	
+	$H(s) = \begin{bmatrix}1&1\end{bmatrix}. \dfrac{1}{(s+3).(s+4)}.\begin{bmatrix} s+4 & 0 \\ 0 & s+3	\end{bmatrix} .\begin{bmatrix} 1 \\ 1\end{bmatrix} + [0]$ \\
+	
+	$ = \begin{bmatrix} \dfrac{1}{s+3} & \dfrac{1}{s+4} \end{bmatrix}.\begin{bmatrix} 1 \\ 1\end{bmatrix} + [0]$ \\
+	
+	$ = \dfrac{1}{s+3} + \dfrac{1}{s+4}  = \dfrac{2s+7}{(s+3).(s+4)}$ \\
+	
+	\item
+	$\begin{bmatrix}\dot{x_1}(t)\\ \dot{x_2}(t) \end{bmatrix}$ = $\begin{bmatrix} 0 & 1 \\ -3&-2 \end{bmatrix} \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} + \begin{bmatrix} 0\\1 \end{bmatrix}u(t)$ \\
+	
+	$y(t)$ = $\begin{bmatrix} 1&0 \end{bmatrix}$ $\begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix}$\ + [0]u(t) \\
+	
+	Transfer function H(s) is defined by: \\
+	$H(s)$ = $C.(sI-A)^{-1}.B + D$ \\
+		We have: \\
+	$(sI-A)$ = $\begin{bmatrix} s&0 \\ 0&s	\end{bmatrix} - \begin{bmatrix}
+	0 & 1 \\ -3 & -2 \end{bmatrix} = \begin{bmatrix} s & -1 \\ 3 & s+2	\end{bmatrix}$\\
+	
+	$H(s)$ = $\begin{bmatrix}1&0\end{bmatrix}.\begin{bmatrix} s&-1 \\ 3&s+2 \end{bmatrix}^{-1}. \begin{bmatrix} 0\\1 \end{bmatrix} + [0]$ \\
+	
+	$H(s)$ = $\begin{bmatrix}1&0\end{bmatrix}. \dfrac{1}{s.(s+2)+3}.\begin{bmatrix} s+2 & 1 \\ -3 & s	\end{bmatrix} .\begin{bmatrix} 0\\1 \end{bmatrix} + [0]$ \\
+	
+	= $\dfrac{1}{s^2 + 2s +3}. \begin{bmatrix} s+2 & 1 \end{bmatrix}.\begin{bmatrix} 0 \\ 1\end{bmatrix} + [0]$ \\
+	= $\dfrac{1}{s^2 + 2s +3}$ \\
+	
+	\item
+	$\begin{bmatrix}\dot{x_1}(t)\\ \dot{x_2}(t) \end{bmatrix}$ = $\begin{bmatrix} 0&-2 \\ 1&-12 \end{bmatrix} \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} + \begin{bmatrix} 1\\0 \end{bmatrix}u(t)$ \\
+	
+	$y(t)$ = $\begin{bmatrix} 0&1 \end{bmatrix}$ $\begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix}$\ + [0]u(t) \\
+	
+	Transfer function H(s) is defined by: \\
+	$H(s)$ = $C.(sI-A)^{-1}.B + D$ \\
+	We have: \\
+	$(sI-A)$ = $\begin{bmatrix} s&0 \\ 0&s	\end{bmatrix} - \begin{bmatrix}
+	0 & -2 \\ 1 & -12 \end{bmatrix} = \begin{bmatrix} s & 2 \\ -1& s+12	\end{bmatrix}$\\
+	
+	$H(s)$ = $\begin{bmatrix}0&1\end{bmatrix}.\begin{bmatrix} s&2 \\-1&s+12 \end{bmatrix}^{-1}. \begin{bmatrix} 1\\0 \end{bmatrix} + [0]$ \\
+	
+	$H(s)$ = $\begin{bmatrix}0&1\end{bmatrix}. \dfrac{1}{s.(s+12)+2}.\begin{bmatrix} s+12 & -2 \\ 1 & s	\end{bmatrix} .\begin{bmatrix} 1\\0 \end{bmatrix} + [0]$ \\
+	
+	= $\dfrac{1}{s^2 + 12s +2}. \begin{bmatrix} 1 & s \end{bmatrix}.\begin{bmatrix} 1\\0 \end{bmatrix} + [0]$ \\
+	= $\dfrac{1}{s^2 + 12s + 2}$ \\
+	
+	\item
+	$\begin{bmatrix}\dot{x_1}(t)\\ \dot{x_2}(t) \end{bmatrix} = \begin{bmatrix} 1&2 \\ 3&4 \end{bmatrix} \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} + \begin{bmatrix} 5\\6 \end{bmatrix}u(t)$ \\
+	
+	$y(t)$ = $\begin{bmatrix} 7&8 \end{bmatrix}$ $\begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix}$\ + [9]u(t) \\
+	
+	Transfer function H(s) is defined by: \\
+	$H(s)$ = $C.(sI-A)^{-1}.B + D$ \\
+	We have: \\
+	$(sI-A)$ = $\begin{bmatrix} s&0 \\ 0&s	\end{bmatrix} - \begin{bmatrix}
+	1&2 \\ 3&4 \end{bmatrix} = \begin{bmatrix} s-1 & -2 \\ -3 & s-4	\end{bmatrix}$\\
+	
+	$H(s)$ = $\begin{bmatrix}7&8\end{bmatrix}.\begin{bmatrix} s-1&-2 \\-3&s-4 \end{bmatrix}^{-1}. \begin{bmatrix} 5\\6 \end{bmatrix} + [9]$ \\
+	
+	$H(s)$ = $\begin{bmatrix}7&8\end{bmatrix}. \dfrac{1}{(s-1)(s-4)-6}.\begin{bmatrix} s-4 & 2 \\ 3 & s-1	\end{bmatrix} .\begin{bmatrix} 5\\6 \end{bmatrix} + [9]$ \\
+	
+		= $\dfrac{1}{s^2 - 5s - 2}. \begin{bmatrix} 7s-4 & 8s+6 \end{bmatrix}.\begin{bmatrix} 5\\6 \end{bmatrix} + [9]$ \\
+		= $\dfrac{83s+16}{s^2 -5s - 2} + 9$ \\
+		= $\dfrac{9s^2+38s-2}{s^2-5s-2} $\\
+\end{enumerate}
+\pagebreak
+
+
+\section{NE2.3 - Determine the characteristic polynomial and eigenvalues for the systems represented by the following system dynamics matrices:}
+\begin{enumerate}
+	\doublespacing
+	\item 
+	$A = \begin{bmatrix}-1&0 \\ 0&-2 \end{bmatrix} $ \\
+	$A1 = (\lambda .I-A) = \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix} - \begin{bmatrix} -1&0 \\ 0&-2 \end{bmatrix} = \begin{bmatrix} \lambda + 1 & 0 \\ 0 & \lambda +2 \end{bmatrix} $ \\
+	
+	Characteristic polynomial of A is defined by determinant of A1:\\
+	$det(\lambda .I-A) = (\lambda + 1)(\lambda +2)$ \\
+	Eigenvalues of A are defined when $ det(\lambda .I-A) = 0$, so: \\
+	$(\lambda + 1)(\lambda +2) = 0  \Leftrightarrow \begin{cases} \lambda_1 = -1 \\ \lambda_2 = -2 \end{cases} $ \\
+	
+	\item 
+	$A = \begin{bmatrix} 0&1 \\ -10&-20 \end{bmatrix} $ \\
+	$A2 = (\lambda .I-A) = \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix} - \begin{bmatrix} 0&1 \\ -10&-20 \end{bmatrix} = \begin{bmatrix} \lambda & -1 \\ 10 & \lambda +20 \end{bmatrix} $ \\
+	
+	Characteristic polynomial of A is defined by determinant of A2:\\
+	$det(\lambda .I-A) = \lambda.(\lambda +20) +10 = \lambda^2 + 20\lambda +10$ \\
+	Eigenvalues of A are defined when $ det(\lambda .I-A) = 0$, so: \\
+	$\lambda^2 + 20\lambda +10 = 0  \Leftrightarrow \begin{cases} \lambda_1 = -10 + 3\sqrt{10}  \\ \lambda_2 = -10 - 3\sqrt{10} \end{cases} $ \\
+	
+	\item 
+	$A = \begin{bmatrix} 0&1 \\ -10&0 \end{bmatrix} $ \\
+	$A3 = (\lambda .I-A) = \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix} - \begin{bmatrix} 0&1 \\ -10&0 \end{bmatrix} = \begin{bmatrix} \lambda & -1 \\ 10 & \lambda \end{bmatrix} $ \\
+	
+	Characteristic polynomial of A is defined by determinant of A3:\\
+	$det(\lambda .I-A) = \lambda.\lambda +10 = \lambda^2 +10$ \\
+	Eigenvalues of A are defined when $ det(\lambda .I-A) = 0$, so: \\
+	$\lambda^2 +10 = 0  \Leftrightarrow \begin{cases} \lambda_1 = j\sqrt{10}  \\ \lambda_2 = -j\sqrt{10} \end{cases} $ \\
+	
+	\item 
+	$A = \begin{bmatrix} 0&1 \\ 0&-20 \end{bmatrix} $ \\
+	$A4 = (\lambda .I-A) = \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix} - \begin{bmatrix} 0&1 \\ 0&-20 \end{bmatrix} = \begin{bmatrix} \lambda & -1 \\ 0 & \lambda +20 \end{bmatrix} $ \\
+		
+	Characteristic polynomial of A is defined by determinant of A4:\\
+	$det(\lambda .I-A) = \lambda.(\lambda +20) +1 = \lambda^2 + 20\lambda +1$ \\
+	Eigenvalues of A are defined when $ det(\lambda .I-A) = 0$, so: \\
+	$\lambda^2 + 20\lambda +1 = 0  \Leftrightarrow \begin{cases} \lambda_1 = -10 + 3\sqrt{11}  \\ \lambda_2 = -10 - 3\sqrt{11} \end{cases} $ \\
+	
+\end{enumerate}
+\pagebreak
+
+\section{NE2.10 - Diagonalize the following system dynamics matrices A using coordinate transformation:}
+\begin{enumerate}
+	\doublespacing
+	\item 
+		$A = \begin{bmatrix} 0&1 \\ -8&-20 \end{bmatrix} $ \\
+		$|\lambda .I - A| = det\begin{bmatrix} \lambda & -1 \\ 8 & \lambda + 20 \end{bmatrix} = \lambda .(\lambda +20) +8 $ \\
+		Eigenvalues of A are: 
+			$\begin{cases} \lambda_1 = -10 + 2\sqrt{23}  \\ \lambda_2 = -10 - 2\sqrt{23} \end{cases} $ \\
+		For $\lambda_1 = -10 + 2\sqrt{23}$ the eigenvector $\nu_1$ is defined as $\begin{bmatrix}\nu_{11}\\ \nu_{21} \end{bmatrix}$ with: \\
+			$[\lambda .I - A].\nu_1 = 0 \Leftrightarrow \begin{bmatrix} -10 + 2\sqrt{23} & -1 \\ 8& 10+2\sqrt{23} \end{bmatrix} .\begin{bmatrix}\nu_{11}\\ \nu_{21} \end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix} $ \\
+			$ \Leftrightarrow \begin{bmatrix} \nu_{11} \\\nu_{21}	\end{bmatrix} = \begin{bmatrix} 10+2\sqrt{23} \\-8	\end{bmatrix}$ \\
+	
+		For $\lambda_2 = -10 - 2\sqrt{23}$ the eigenvector $\nu_2$ is defined as $\begin{bmatrix}\nu_{12}\\ \nu_{22} \end{bmatrix}$ with: \\
+			$[\lambda .I - A].\nu_2 = 0 \Leftrightarrow \begin{bmatrix} -10 - 2\sqrt{23} & -1 \\ 8& 10-2\sqrt{23} \end{bmatrix} .\begin{bmatrix}\nu_{12}\\ \nu_{22} \end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix} $ \\
+			$ \Leftrightarrow \begin{bmatrix} \nu_{12} \\\nu_{22}	\end{bmatrix} = \begin{bmatrix} 10-2\sqrt{23} \\-8	\end{bmatrix}$ \\
+	
+		The diagonal canonical form transformation matrix $T$ is defined base on eigenvectors $\nu$: \\
+			$T = \begin{bmatrix} \nu_1 & \nu_2	\end{bmatrix} = \begin{bmatrix} 10+2\sqrt{23} & 10 - 2\sqrt{23} \\ -8 & -8 \end{bmatrix} $\\
+			$T^{-1} = \dfrac{1}{det(T)}.\begin{bmatrix} -8 & -10 + 2\sqrt{23} \\ 8 & 10+2\sqrt{23} \end{bmatrix} = \dfrac{-1}{32\sqrt{23}}.\begin{bmatrix} -8 & -10 + 2\sqrt{23} \\ 8 & 10+2\sqrt{23} \end{bmatrix} $\\
+	
+		The diagonal canonical form or matrix $A$ is defined: \\
+			$A_{DCF} = T^{-1}.A.T = \dfrac{-1}{32\sqrt{23}}.\begin{bmatrix} -8 & -10 + 2\sqrt{23} \\ 8 & 10+2\sqrt{23} \end{bmatrix} .\begin{bmatrix} 0&1 \\ -8&-20 \end{bmatrix} .\begin{bmatrix} 10+2\sqrt{23} & 10 - 2\sqrt{23} \\ -8 & -8 \end{bmatrix} $\\
+			$ = \dfrac{-1}{32\sqrt{23}} .\begin{bmatrix} 80-162\sqrt{23} & 192 - 40\sqrt{23} \\ -80-16\sqrt{23} & -192-40\sqrt{23} \end{bmatrix} .\begin{bmatrix} 10+2\sqrt{23} & 10 - 2\sqrt{23} \\ -8 & -8 \end{bmatrix} $\\
+			$ = \dfrac{-1}{32\sqrt{23}} .\begin{bmatrix} -1472+320\sqrt{23} & 0 \\ 0 & 1472+320\sqrt{23} \end{bmatrix} $\\
+			$ = \begin{bmatrix} 2\sqrt{23} -10 & 0 \\ 0 & -2\sqrt{23} -10 \end{bmatrix} $ \\
+	
+	\item
+		$A = \begin{bmatrix} 0&1 \\ 10&6 \end{bmatrix} $ \\
+		$|\lambda .I - A| = det\begin{bmatrix} \lambda & -1 \\ -10 & \lambda -6 \end{bmatrix} = \lambda .(\lambda -6) -10 = \lambda^2 - 6\lambda -10 $ \\
+		Eigenvalues of A are: 
+			$\begin{cases} \lambda_1 = 3 + \sqrt{19}  \\ \lambda_2 = 3 - \sqrt{19} \end{cases} $ \\
+		For $\lambda_1 = 3 + \sqrt{19}$ the eigenvector $\nu_1$ is defined as $\begin{bmatrix}\nu_{11}\\ \nu_{21} \end{bmatrix}$ with: \\
+			$[\lambda .I - A].\nu_1 = 0 \Leftrightarrow \begin{bmatrix} 3 + \sqrt{19} & -1 \\ -10& -3+\sqrt{19} \end{bmatrix} .\begin{bmatrix}\nu_{11}\\ \nu_{21} \end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix} $ \\
+			$ \Leftrightarrow \begin{bmatrix} \nu_{11} \\\nu_{21}	\end{bmatrix} = \begin{bmatrix} 1 \\ 3+\sqrt{19}	\end{bmatrix}$ \\
+		For $\lambda_2 = 3 - \sqrt{19}$ the eigenvector $\nu_2$ is defined as $\begin{bmatrix}\nu_{12}\\ \nu_{22} \end{bmatrix}$ with: \\
+		$[\lambda .I - A].\nu_2 = 0 \Leftrightarrow \begin{bmatrix} 3 - \sqrt{19} & -1 \\ -10& -3-\sqrt{19} \end{bmatrix} .\begin{bmatrix}\nu_{12}\\ \nu_{22} \end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix} $ \\
+		$ \Leftrightarrow \begin{bmatrix} \nu_{11} \\\nu_{21}	\end{bmatrix} = \begin{bmatrix} 1 \\ 3-\sqrt{19}	\end{bmatrix}$ \\
+	
+		The diagonal canonical form transformation matrix $T$ is defined base on eigenvectors $\nu$: \\
+		$T = \begin{bmatrix} \nu_1 & \nu_2	\end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 3+\sqrt{19} & 3 - \sqrt{19} \end{bmatrix} $\\
+		$T^{-1} = \dfrac{1}{det(T)}.\begin{bmatrix} 3-\sqrt{19} & -1 \\ -3-\sqrt{19} & 1  \end{bmatrix} = \dfrac{-1}{2\sqrt{19}}.\begin{bmatrix} 3-\sqrt{19} & -1 \\ -3-\sqrt{19} & 1 \end{bmatrix} $\\
+		
+		The diagonal canonical form or matrix $A$ is defined: \\
+		$A_{DCF} = T^{-1}.A.T = \dfrac{-1}{2\sqrt{19}} .\begin{bmatrix} 3-\sqrt{19} & -1 \\ -3-\sqrt{19} & 1 \end{bmatrix} .\begin{bmatrix} 0&1 \\ 10&6 \end{bmatrix} .\begin{bmatrix} 1 & 1 \\ 3+\sqrt{19} & 3 - \sqrt{19} \end{bmatrix}  $\\
+		
+		$A_{DCF} = \dfrac{-1}{2\sqrt{19}} .\begin{bmatrix} -10 & -3-\sqrt{19} \\ 10 & 3-\sqrt{19} \end{bmatrix} .\begin{bmatrix} 1 & 1 \\ 3+\sqrt{19} & 3 - \sqrt{19} \end{bmatrix} $ \\
+		$A_{DCF} = \dfrac{-1}{2\sqrt{19}} \begin{bmatrix} -20 & 0 \\ 0 & 38-6\sqrt{19} \end{bmatrix}$\\
+		$ = \begin{bmatrix} \dfrac{10}{\sqrt{19}} & 0 \\ 0 & 3-\sqrt{19} \end{bmatrix} $\\
+		
+	\item
+		$A = \begin{bmatrix} 0&-10 \\ 1&-1 \end{bmatrix} $ \\
+		$|\lambda .I - A| = det\begin{bmatrix} \lambda & 10 \\ -1 & \lambda +1 \end{bmatrix} = \lambda .(\lambda +1) +10 = \lambda^2 +\lambda +10 $ \\
+		Eigenvalues of A are: 
+		$\begin{cases} \lambda_1 = \dfrac{-1-j\sqrt{39}}{2}  \\ \lambda_2 = \dfrac{-1+j\sqrt{39}}{2}\end{cases} $ \\
+		
+		For $\lambda_1 = \dfrac{-1-j\sqrt{39}}{2}$ the eigenvector $\nu_1$ is defined as $\begin{bmatrix}\nu_{11}\\ \nu_{21} \end{bmatrix}$ with: \\
+		$[\lambda .I - A].\nu_1 = 0 \Leftrightarrow \begin{bmatrix} \dfrac{-1-j\sqrt{39}}{2} & 10 \\ -1 & \dfrac{1-j\sqrt{39}}{2} \end{bmatrix} .\begin{bmatrix}\nu_{11}\\ \nu_{21} \end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix} $ \\
+		$ \Leftrightarrow \begin{bmatrix} \nu_{11} \\\nu_{21}	\end{bmatrix} = \begin{bmatrix} \dfrac{1-j\sqrt{39}}{2}  \\ 1	\end{bmatrix}$ \\
+		
+		For $\lambda_2 = \dfrac{-1+j\sqrt{39}}{2}$ the eigenvector $\nu_2$ is defined as $\begin{bmatrix}\nu_{12}\\ \nu_{22} \end{bmatrix}$ with: \\
+		$[\lambda .I - A].\nu_2 = 0 \Leftrightarrow \begin{bmatrix} \dfrac{-1+j\sqrt{39}}{2} & 10 \\ -1 & \dfrac{1+j\sqrt{39}}{2} \end{bmatrix} .\begin{bmatrix}\nu_{12}\\ \nu_{22} \end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix} $ \\
+		$ \Leftrightarrow \begin{bmatrix} \nu_{12} \\\nu_{22}	\end{bmatrix} = \begin{bmatrix} \dfrac{1+j\sqrt{39}}{2}  \\ 1	\end{bmatrix}$ \\
+		
+		The diagonal canonical form transformation matrix $T$ is defined base on eigenvectors $\nu$: \\
+		$T = \begin{bmatrix} \nu_1 & \nu_2	\end{bmatrix} = \begin{bmatrix} \dfrac{1-j\sqrt{39}}{2} & \dfrac{1+j\sqrt{39}}{2} \\ 1&1 \end{bmatrix} $\\
+		
+		$T^{-1} = \dfrac{1}{det(T)}.\begin{bmatrix} \dfrac{1-j\sqrt{39}}{2} & \dfrac{1+j\sqrt{39}}{2} \\ 1&1 \end{bmatrix} = \dfrac{-1}{j\sqrt{39}}.\begin{bmatrix} 1&\dfrac{-1-j\sqrt{39}}{2} \\ -1 & \dfrac{1-j\sqrt{39}}{2} \end{bmatrix} $\\
+		
+		The diagonal canonical form or matrix $A$ is defined: \\
+		$A_{DCF} = T^{-1}.A.T = \dfrac{-1}{j\sqrt{39}}.\begin{bmatrix} 1&\dfrac{-1-j\sqrt{39}}{2} \\ -1 & \dfrac{1-j\sqrt{39}}{2} \end{bmatrix} .\begin{bmatrix} 0&-10 \\ 1&-1 \end{bmatrix} .\begin{bmatrix} \dfrac{1-j\sqrt{39}}{2} & \dfrac{1+j\sqrt{39}}{2} \\ 1&1 \end{bmatrix} $ \\
+		
+		$A_{DCF} = \dfrac{-1}{j\sqrt{39}} .\begin{bmatrix} \dfrac{-1-j\sqrt{39}}{2} & \dfrac{-19+j\sqrt{39}}{2} \\ \dfrac{1-j\sqrt{39}}{2} & \dfrac{19+j\sqrt{39}}{2} \end{bmatrix} .\begin{bmatrix} \dfrac{1-j\sqrt{39}}{2} & \dfrac{1+j\sqrt{39}}{2} \\ 1&1 \end{bmatrix} $ \\
+		
+		$A_{DCF} = \dfrac{-1}{j\sqrt{39}} .\begin{bmatrix} \dfrac{-39+j\sqrt{39}}{2} & 0 \\ 0 &  \dfrac{39+j\sqrt{39}}{2} \end{bmatrix} $ \\
+		
+		$A_{DCF} = \begin{bmatrix} -\dfrac{1+j\sqrt{39}}{2} & 0 \\ 0 &  \dfrac{-1+j\sqrt{39}}{2} \end{bmatrix} $ \\
+		
+	\item
+	$A = \begin{bmatrix} 0&10 \\ 1&0 \end{bmatrix} $ \\
+	$|\lambda .I - A| = det\begin{bmatrix} \lambda & -10 \\ -1 & \lambda \end{bmatrix} = \lambda .\lambda-10 = \lambda^2 -10 $ \\
+	Eigenvalues of A are: 
+	$\begin{cases} \lambda_1 = \sqrt{10}  \\ \lambda_2 = -\sqrt{10} \end{cases} $ \\
+	
+	For $\lambda_1 = \sqrt{10}$ the eigenvector $\nu_1$ is defined as $\begin{bmatrix}\nu_{11}\\ \nu_{21} \end{bmatrix}$ with: \\
+		$[\lambda .I - A].\nu_1 = 0 \Leftrightarrow \begin{bmatrix} \sqrt{10} & -10 \\ -1 & \sqrt{10} \end{bmatrix} .\begin{bmatrix}\nu_{11}\\ \nu_{21} \end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix} $ \\
+		$ \Leftrightarrow \begin{bmatrix} \nu_{11} \\\nu_{21}	\end{bmatrix} = \begin{bmatrix} \sqrt{10} \\ 1	\end{bmatrix}$ \\
+	
+	For $\lambda_2 = -\sqrt{10}$ the eigenvector $\nu_2$ is defined as $\begin{bmatrix}\nu_{12}\\ \nu_{22} \end{bmatrix}$ with: \\
+		$[\lambda .I - A].\nu_2 = 0 \Leftrightarrow \begin{bmatrix} -\sqrt{10} & -10 \\ -1 & -\sqrt{10} \end{bmatrix} .\begin{bmatrix}\nu_{12}\\ \nu_{22} \end{bmatrix} = \begin{bmatrix} 0\\0 \end{bmatrix} $ \\
+		$ \Leftrightarrow \begin{bmatrix} \nu_{12} \\\nu_{22}	\end{bmatrix} = \begin{bmatrix} -\sqrt{10} \\ 1	\end{bmatrix}$ \\
+	
+	The diagonal canonical form transformation matrix $T$ is defined base on eigenvectors $\nu$: \\
+		$T = \begin{bmatrix} \nu_1 & \nu_2	\end{bmatrix} = \begin{bmatrix} \sqrt{10} & -\sqrt{10} \\ 1&1 \end{bmatrix} $\\
+	
+		$T^{-1} = \dfrac{1}{det(T)}.\begin{bmatrix} 1 & \sqrt{10} \\ -1& \sqrt{10} \end{bmatrix} = \dfrac{1}{2\sqrt{10}}.\begin{bmatrix} 1&\sqrt{10} \\ -1 & \sqrt{10} \end{bmatrix} $\\
+	
+	The diagonal canonical form or matrix $A$ is defined: \\
+		$A_{DCF} = T^{-1}.A.T = \dfrac{1}{2\sqrt{10}}.\begin{bmatrix} 1&\sqrt{10} \\ -1 & \sqrt{10} \end{bmatrix} .\begin{bmatrix} 0&10 \\ 1&0 \end{bmatrix} .\begin{bmatrix} \sqrt{10} & -\sqrt{10} \\ 1&1 \end{bmatrix} $\\
+	
+		$A_{DCF} = \dfrac{1}{2\sqrt{10}}. \begin{bmatrix} \sqrt{10} & 10 \\ \sqrt{10} & -10 \end{bmatrix} .\begin{bmatrix} \sqrt{10} & -\sqrt{10} \\ 1&1 \end{bmatrix} = \dfrac{1}{2\sqrt{10}} .\begin{bmatrix} 20 & 0 \\ 0&-20 \end{bmatrix} $\\
+
+		$A_{DCF} = \begin{bmatrix} \sqrt{10} & 0 \\ 0 & -\sqrt{10} \end{bmatrix}	$ \\
+		
+\end{enumerate}
+\end{document}

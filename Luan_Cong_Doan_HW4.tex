@@ -1,0 +1,122 @@
+\documentclass[14pt,a4paper]{article}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\geometry{a4paper, total = {210mm,297mm},left=35mm, right=25mm,top=25mm,bottom=25mm}
+
+
+%Begin document - Applied linear Systems Homework 3
+
+\begin{document}
+\label{cover}
+\begin{center}
+	\vspace*{3cm}
+	\large{\textbf{ME-5554 Applied Linear System \\ Homework 4}}
+	\vfill
+	\textbf{Luan Cong Doan} \\ luandoan@vt.edu
+	%\vfill
+%	Department of Mechanical Engineering \\ Virginia Polytechnic Institute and State University
+	\vfill
+	\today
+\end{center}
+\pagebreak
+
+\label{Answer Sheet}
+\label{Numerical Exercise}
+\large\textbf{NE2.2 - For the following systems described by the given state equations, solve for the State Feedback Control gains that place the closed loop poles at $[-3+j, -3-j]$:}\\
+
+\hspace*{1cm} The desired characteristic equation is define by (1): 
+		\begin{center}
+		$|sI-A+bg| = (s+3-j)(s+3+j) = s^2 + 6s + 10 $ 
+		\end{center}
+	\textbf{\textit{We have}}:
+\begin{enumerate}
+	\doublespacing
+	\item 
+		$\begin{bmatrix}\dot{x_1}(t)\\ \dot{x_2}(t) \end{bmatrix} = \begin{bmatrix}-3&0 \\0&-4 \end{bmatrix} \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} + \begin{bmatrix} 1\\1 \end{bmatrix}u(t)$ \\
+		
+		\hspace*{0.6cm} $y(t) = \begin{bmatrix} 1&1 \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix}\ + [0]u(t) $ \\
+		
+		The closed-loop pole locations (CPL) is defined by:\\
+		$[CPL] = \begin{bmatrix} sI-A+bg \end{bmatrix} = s.\begin{bmatrix}1&0\\0&1 \end{bmatrix} - \begin{bmatrix}-3&0 \\0&-4 \end{bmatrix} +  \begin{bmatrix} 1\\1 \end{bmatrix} \begin{bmatrix} g_1 & g_2 \end{bmatrix}$\\[0.2cm]
+		$[CPL] = \begin{bmatrix}s+3&0 \\0&s+4 \end{bmatrix} + \begin{bmatrix} g_1 & g_2  \\g_1 & g_2\end{bmatrix} = \begin{bmatrix}s+3+g_1&g_2 \\g_1&s+4+g_2 \end{bmatrix} $\\
+		
+		The determinant of [CPL] is defined: \\
+		$det[CPL] = |sI-A+bg| = (s+3+g_1)(s+4+g_2) - g_1.g_2$\\
+		\hspace*{4.6cm} $ = s^2 + (g_1 + g_2 + 7)s + (4g_1+3g_2+12)  $ 
+		
+		From (1) we have:
+		$\begin{cases} g_1 + g_2 + 7 = 6 \\	4g_1 + 3g_2 + 12 = 10	\end{cases} \Leftrightarrow \begin{bmatrix} 1&1 \\ 4&3\end{bmatrix} \begin{bmatrix} g_1\\g_2 \end{bmatrix} = \begin{bmatrix} -1\\-2 \end{bmatrix} $ \\[0.2cm]
+		$ \Rightarrow \begin{bmatrix} g_1\\g_2 \end{bmatrix} = {\begin{bmatrix} 1&1 \\ 4&3\end{bmatrix}}^{-1} \begin{bmatrix} -1\\-2 \end{bmatrix} = \dfrac{1}{-1} \begin{bmatrix} 3&-1 \\ -4&1\end{bmatrix} \begin{bmatrix} -1\\-2 \end{bmatrix} = -1\begin{bmatrix} -1\\2 \end{bmatrix} = \begin{bmatrix} 1\\-2 \end{bmatrix}$ \\[0.2cm]
+		The control gain is defined: $ \begin{bmatrix} g_1\\g_2 \end{bmatrix} = \begin{bmatrix} 1\\-2 \end{bmatrix}$ \\
+		
+		The State Feedback control is: $u(t) = -g.x(t) $\\
+		\hspace*{1cm} $\Leftrightarrow u(t) = -\begin{bmatrix} 1&-2 \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix} = -x_1(t) + 2x_2(t)$ \\
+		
+	\item
+		$\begin{bmatrix}\dot{x_1}(t)\\ \dot{x_2}(t) \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ -3&-2 \end{bmatrix} \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} + \begin{bmatrix} 0\\1 \end{bmatrix}u(t)$ \\
+		
+		\hspace*{0.6cm} $y(t) = \begin{bmatrix} 1&0 \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix}\ + [0]u(t) $\\
+	
+		The closed-loop pole locations (CPL) is defined by:\\
+		$[CPL] = \begin{bmatrix} sI-A+bg \end{bmatrix} = s.\begin{bmatrix}1&0\\0&1 \end{bmatrix} - \begin{bmatrix}0&1 \\-3&-2 \end{bmatrix} +  \begin{bmatrix} 0\\1 \end{bmatrix} \begin{bmatrix} g_1 & g_2 \end{bmatrix}$\\[0.2cm]
+		$[CPL] = \begin{bmatrix}s&-1 \\ 3&s+2 \end{bmatrix} + \begin{bmatrix} 0 & 0  \\g_1 & g_2\end{bmatrix} = \begin{bmatrix}s&-1 \\3+g_1&s+2+g_2 \end{bmatrix} $\\
+		
+		The determinant of [CPL] is defined: \\
+		$det[CPL] = |sI-A+bg| = s(s+2+g_2) - (3+g_1)(-1) = s^2 + (g_2 + 2)s + (g_1+3)  $ 
+		
+		From (1) we have:
+		$\begin{cases} g_2 + 2 = 6 \\	g_1 + 3 = 10 \end{cases} \Leftrightarrow \begin{cases} g_1 = 7 \\	g_2 = 4 \end{cases} $\\
+		
+		The control gain is defined: $ \Rightarrow \begin{bmatrix} g_1\\g_2 \end{bmatrix} = \begin{bmatrix} 7\\4 \end{bmatrix}$ \\
+		
+		The State Feedback control is: $u(t) = -g.x(t) $\\
+		\hspace*{1cm} $\Leftrightarrow u(t) = -\begin{bmatrix} 7&4 \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix} = -7x_1(t) - 4x_2(t)$ \\
+	
+	\item
+		$\begin{bmatrix}\dot{x_1}(t)\\ \dot{x_2}(t) \end{bmatrix} = \begin{bmatrix} 0&-2 \\ 1&-12 \end{bmatrix} \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} + \begin{bmatrix} 1\\0 \end{bmatrix}u(t)$ \\
+		
+		\hspace*{0.6cm} $y(t) = \begin{bmatrix} 0&1 \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix}\ + [0]u(t)$ \\
+	
+		The closed-loop pole locations (CPL) is defined by:\\
+		$[CPL] = \begin{bmatrix} sI-A+bg \end{bmatrix} = s.\begin{bmatrix}1&0\\0&1 \end{bmatrix} - \begin{bmatrix}0&-2 \\1&-12 \end{bmatrix} +  \begin{bmatrix} 1\\0 \end{bmatrix} \begin{bmatrix} g_1 & g_2 \end{bmatrix}$\\
+		$[CPL] = \begin{bmatrix}s&2 \\-1&s+12 \end{bmatrix} + \begin{bmatrix} g_1 & g_2  \\ 0&0 \end{bmatrix} = \begin{bmatrix}s+g_1&g_2+2 \\-1&s+12 \end{bmatrix} $\\
+		
+		The determinant of [CPL] is defined: \\
+		$det[CPL] = |sI-A+bg| = (s+g_1)(s+12) -(-1)(g_2+2)$\\
+		\hspace*{4.6cm} $ = s^2 + (g_1 + 12)s + (12g_1+g_2+2)  $ 
+		
+		From (1) we have:
+		$\begin{cases} g_1+12 = 6 \\ 12g_1 + g_2 + 2 = 10	\end{cases} \Leftrightarrow \begin{bmatrix} 1&0 \\ 12&1 \end{bmatrix} \begin{bmatrix} g_1\\g_2 \end{bmatrix} = \begin{bmatrix} -6\\8 \end{bmatrix} $ \\[0.2cm]
+		$ \Rightarrow \begin{bmatrix} g_1\\g_2 \end{bmatrix} = {\begin{bmatrix} 1&0 \\ 12&1\end{bmatrix}}^{-1} \begin{bmatrix} -6\\8 \end{bmatrix} = \dfrac{1}{1} \begin{bmatrix} 1&0 \\ -12&1 \end{bmatrix} \begin{bmatrix} -6\\8 \end{bmatrix} =  \begin{bmatrix} -6\\80 \end{bmatrix}$ \\[0.2cm]
+		The control gain is defined: $ \Rightarrow \begin{bmatrix} g_1\\g_2 \end{bmatrix} = \begin{bmatrix} -6\\80 \end{bmatrix}$ \\
+		
+		The State Feedback control is: $u(t) = -g.x(t) $\\
+		\hspace*{1cm} $\Leftrightarrow u(t) = -\begin{bmatrix} -6&80 \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix} = 6x_1(t) - 80x_2(t)$ \\
+		
+	\item
+		$\begin{bmatrix}\dot{x_1}(t)\\ \dot{x_2}(t) \end{bmatrix} = \begin{bmatrix} 1&2 \\ 3&4 \end{bmatrix} \begin{bmatrix}x_1(t) \\ x_2(t) \end{bmatrix} + \begin{bmatrix} 5\\6 \end{bmatrix}u(t)$ \\
+		
+		\hspace*{0.6cm} $y(t) = \begin{bmatrix} 7&8 \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix} + [9]u(t) $\\
+		
+		The closed-loop pole locations (CPL) is defined by:\\
+		$[CPL] = \begin{bmatrix} sI-A+bg \end{bmatrix} = s.\begin{bmatrix}1&0\\0&1 \end{bmatrix} - \begin{bmatrix}1&2 \\3&4 \end{bmatrix} +  \begin{bmatrix} 5\\6 \end{bmatrix} \begin{bmatrix} g_1 & g_2 \end{bmatrix}$\\[0.2cm]
+		$[CPL] = \begin{bmatrix}s-1&-2 \\-3&s-4 \end{bmatrix} + \begin{bmatrix} 5g_1 & 5g_2  \\6g_1 & 6g_2\end{bmatrix} = \begin{bmatrix}s+5g_1-1&5g_2-2 \\6g_1-3&s+6g_2-4 \end{bmatrix} $\\
+		
+		The determinant of [CPL] is defined: \\
+		$det[CPL] = |sI-A+bg| = (s+5g_1-1)(s+6g_2-4) - (6g_1-3).(5g_2-2)$\\
+		\hspace*{4.6cm} $ = s^2 + (5g_1 + 6g_2 -5)s + (-8g_1+9g_2-2)  $ 
+		
+		From (1) we have:
+		$\begin{cases} 5g_1 + 6g_2 -5 = 6 \\	-8g_1 + 9g_2 -2 = 10	\end{cases} \Leftrightarrow \begin{bmatrix} 5&6 \\ -8&9 \end{bmatrix} \begin{bmatrix} g_1\\g_2 \end{bmatrix} = \begin{bmatrix} 11\\12 \end{bmatrix} $ \\[0.2cm]
+		$ \Rightarrow \begin{bmatrix} g_1\\g_2 \end{bmatrix} = {\begin{bmatrix} 5&6 \\ -8&9 \end{bmatrix}}^{-1} \begin{bmatrix} 11\\12 \end{bmatrix} = \dfrac{1}{93} \begin{bmatrix} 9&-6 \\ 8&5\end{bmatrix} \begin{bmatrix} 11\\12 \end{bmatrix} = \dfrac{1}{93} \begin{bmatrix} 42\\148 \end{bmatrix} = \begin{bmatrix} \dfrac{42}{93} \\[0.3cm] \dfrac{148}{93} \end{bmatrix}$ \\[0.2cm]
+		The control gain is defined: $ \Rightarrow \begin{bmatrix} g_1\\g_2 \end{bmatrix} = \begin{bmatrix} \dfrac{42}{93} \\[0.3cm] \dfrac{148}{93} \end{bmatrix}$ \\
+	
+		The State Feedback control is: $u(t) = -g.x(t) $\\
+		\hspace*{1cm} $\Leftrightarrow u(t) = -\begin{bmatrix} \dfrac{42}{93} & \dfrac{148}{93} \end{bmatrix} \begin{bmatrix} x_1(t)\\x_2(t) \end{bmatrix} = -\dfrac{42}{93}x_1(t) - \dfrac{148}{93}x_2(t)$ \\
+	
+\end{enumerate}
+
+\end{document}
